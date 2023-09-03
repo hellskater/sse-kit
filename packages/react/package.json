@@ -1,69 +1,69 @@
 {
-    "name": "@sse-kit/react",
-    "version": "0.0.0",
-    "license": "MIT",
-    "type": "module",
-    "description": "React hooks for SSE",
-    "keywords": [
-      "react",
-      "hooks",
-      "sse",
-      "server-sent-events"
-    ],
-    "repository": "https://github.com/hellskater/sse-kit",
-    "author": "K Srinivas Rao (https://twitter.com/Srinu53168)",
-    "exports": {
-      ".": {
-        "types": "./dist/index.d.ts",
-        "import": "./dist/index.mjs",
-        "require": "./dist/index.js"
-      }
-    },
-    "files": [
-      "dist"
-    ],
-    "publishConfig": {
-      "access": "public"
-    },
-    "typesVersions": {
-      "*": {
-        "*": [
-          "dist/*"
-        ]
-      }
-    },
-    "scripts": {
-      "lint": "eslint \"**/*.{ts,tsx}\" --max-warnings 0",
-      "clean": "git clean -xdf dist node_modules",
-      "build": "tsup",
-      "typecheck": "tsc --noEmit",
-      "dev": "tsup --watch"
-    },
-    "dependencies": {
-     
-    },
-    "peerDependencies": {
-      "react": "^17.0.2 || ^18.0.0"
-    },
-    "devDependencies": {
-      "@types/node": "18.16.0",
-      "@types/react": "18.2.8",
-      "@types/react-dom": "18.2.4",
-      "@sse-kit/eslint-config": "workspace:*",
-      "@sse-kit/tsconfig": "workspace:*",
-      "@sse-kit/tsup-config": "workspace:*",
-      "eslint": "^8.47.0",
-      "react": "18.2.0",
-      "tsup": "6.7.0",
-      "typescript": "^5.1.6",
-      "zod": "^3.21.4"
-    },
-    "eslintConfig": {
-      "root": true,
-      "extends": [
-        "@sse-kit/eslint-config/base",
-        "@sse-kit/eslint-config/react"
+  "name": "@sse-kit/react",
+  "version": "0.0.0",
+  "license": "MIT",
+  "type": "module",
+  "description": "React hooks for SSE",
+  "keywords": [
+    "react",
+    "hooks",
+    "sse",
+    "server-sent-events"
+  ],
+  "repository": "https://github.com/hellskater/sse-kit",
+  "author": "K Srinivas Rao (https://twitter.com/Srinu53168)",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "dist/*"
       ]
     }
+  },
+  "scripts": {
+    "lint": "eslint \"**/*.{ts,tsx}\" --max-warnings 0",
+    "clean": "git clean -xdf dist node_modules",
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "dev": "tsup --watch"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "^17.0.2 || ^18.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.16.0",
+    "@types/react": "18.2.8",
+    "@types/react-dom": "18.2.4",
+    "@sse-kit/eslint-config": "workspace:*",
+    "@sse-kit/tsconfig": "workspace:*",
+    "@sse-kit/tsup-config": "workspace:*",
+    "eslint": "^8.47.0",
+    "react": "18.2.0",
+    "tsup": "6.7.0",
+    "typescript": "^5.1.6",
+    "zod": "^3.21.4"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@sse-kit/eslint-config/base",
+      "@sse-kit/eslint-config/react"
+    ]
+  },
+  "prettier": {
+    "root": true
   }
-  
+}
