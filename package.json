@@ -1,24 +1,36 @@
 {
   "name": "sse-toolkit",
   "packageManager": "pnpm@8.7.1",
+  "type": "module",
   "license": "MIT",
+  "engines": {
+    "node": ">=v18.16.0",
+    "pnpm": ">=8.7.0"
+  },
   "private": true,
   "author": "K Srinivas Rao (https://twitter.com/Srinu53168)",
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "start": "turbo run start",
-    "clean": "turbo run clean",
-    "lint": "turbo run lint",
-    "format": "prettier --write .",
-    "changeset": "changeset",
-    "version-packages": "changeset version",
-    "release": "turbo run build && pnpm publish -r"
+    "build:all": "turbo run build",
+    "build": "turbo run build --filter \"./packages/*\"",
+    "clean": "turbo run clean && git clean -xdf node_modules",
+    "dev:all": "turbo run dev",
+    "dev": "turbo run dev --filter \"./packages/*\"",
+    "lint": "turbo run lint && manypkg check",
+    "format:check": "prettier --check .",
+    "format": "prettier --write . --list-different",
+    "test": "turbo run test",
+    "test:watch": "turbo run test:watch",
+    "typecheck": "turbo run typecheck"
   },
   "dependencies": {
+    "@changesets/changelog-github": "^0.4.8",
     "@changesets/cli": "^2.26.1",
     "@ianvs/prettier-plugin-sort-imports": "^4.0.2",
+    "@manypkg/cli": "^0.20.0",
+    "@types/node": "18.16.0",
+    "@sse-toolkit/eslint-config": "workspace:*",
     "prettier": "^3.0.0",
-    "turbo": "^1.10.1"
+    "turbo": "^1.10.1",
+    "typescript": "^5.1.6"
   }
 }

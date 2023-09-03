@@ -9,8 +9,7 @@ const config = {
     trailingComma: "all",
     tabWidth: 2,
     plugins: [
-      "@ianvs/prettier-plugin-sort-imports",
-      "prettier-plugin-tailwindcss",
+      "@ianvs/prettier-plugin-sort-imports"
     ],
     // Last version that doesn't squash type and value imports
     importOrderTypeScriptVersion: "4.4.0",

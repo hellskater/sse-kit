@@ -11,13 +11,18 @@
       "outputs": []
     },
     "dev": {
-      "cache": false,
-      "persistent": true
-    },
-    "start": {
       "cache": false
     },
     "clean": {
+      "cache": false
+    },
+    "typecheck": {
+      "dependsOn": ["^build"]
+    },
+    "test": {
+      "dependsOn": ["build"]
+    },
+    "test:watch": {
       "cache": false
     }
   }

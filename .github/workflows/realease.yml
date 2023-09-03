@@ -1,59 +1,54 @@
 name: Release
-
 on:
   push:
     branches:
       - main
 
-permissions:
-  contents: write
-  pull-requests: write
-
-env:
-  FORCE_COLOR: 3
-
-concurrency: ${{ github.workflow }}-${{ github.ref }}
-
 jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
     steps:
-      - name: Checkout Repo
+      - name: Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
-      - name: Set up pnpm
+      - name: Use PNPM
         uses: pnpm/action-setup@v2.2.4
 
-      - name: Set up Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: pnpm
 
-      - name: Install Dependencies
-        run: pnpm i --frozen-lockfile --ignore-scripts
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        run: |
+          echo "pnpm_cache_dir=$(pnpm store path)" >> $GITHUB_OUTPUT
 
-      - name: Create Release PR or Publish Packages
-        id: changesets
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install deps (with cache)
+        run: pnpm install
+
+      - name: Check packages for common errors
+        run: pnpm turbo --filter "./packages/*" build lint test typecheck
+
+      - name: Create Release
+        id: changeset
         uses: changesets/action@v1.4.1
         with:
-          # Builds the package and executes `changeset publish`
-          publish: pnpm release
-          # Alias to `changeset version` script in package.json
-          version: pnpm version-packages
-          commit: 'chore: update package versions'
-          title: 'chore: update package versions'
+          commit: "chore(release): 📦 version packages"
+          title: "chore(release): 📦  version packages"
+          publish: npx changeset publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Send a Discord notification if a publish happens
-        if: steps.changesets.outputs.published == 'true'
-        run: |
-          curl -X POST -H 'Content-type: application/json' \
-          --data '{"content":"A new version of the package has been published!"}' \
-          ${{ secrets.DISCORD_WEBHOOK_URL }}
