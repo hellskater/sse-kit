@@ -30,13 +30,11 @@
     "@manypkg/cli": "^0.20.0",
     "@sse-toolkit/eslint-config": "0.0.1",
     "@types/node": "18.16.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
     "prettier": "^3.0.0",
     "turbo": "^1.10.1",
     "typescript": "^5.1.6"
-  },
-  "devDependencies": {
-    "husky": "^8.0.3",
-    "lint-staged": "^14.0.1"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
