@@ -67,7 +67,5 @@
       "@sse-toolkit/eslint-config/react"
     ]
   },
-  "prettier": {
-    "root": true
-  }
+  "prettier": {}
 }

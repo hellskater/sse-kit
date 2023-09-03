@@ -1,6 +1,6 @@
-import { expect, it } from 'vitest';
-import { add } from '../src';
+import { expect, it } from "vitest";
+import { add } from "../src";
 
-it('should add two numbers', () => {
+it("should add two numbers", () => {
   expect(add(1, 2)).toBe(3);
 });
