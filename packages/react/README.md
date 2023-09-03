@@ -1,1 +1,1 @@
-# @sse-kit/react
+# @sse-toolkit/react

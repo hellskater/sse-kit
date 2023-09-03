@@ -1,1 +1,1 @@
-# SSE-KIT
+# sse-toolkit

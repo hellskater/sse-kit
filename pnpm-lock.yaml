@@ -71,13 +71,13 @@ importers:
 
   packages/react:
     devDependencies:
-      '@sse-kit/eslint-config':
+      '@sse-toolkit/eslint-config':
         specifier: workspace:*
         version: link:../config/eslint
-      '@sse-kit/tsconfig':
+      '@sse-toolkit/tsconfig':
         specifier: workspace:*
         version: link:../config/tsconfig
-      '@sse-kit/tsup-config':
+      '@sse-toolkit/tsup-config':
         specifier: workspace:*
         version: link:../config/tsup
       '@types/node':
@@ -152,7 +152,7 @@ packages:
       json5: 2.2.3
       semver: 6.3.1
     transitivePeerDependencies:
-      - supports-color
+    - supports-color
     dev: false
 
   /@babel/generator@7.22.10:
@@ -254,7 +254,7 @@ packages:
       '@babel/traverse': 7.22.11
       '@babel/types': 7.22.11
     transitivePeerDependencies:
-      - supports-color
+    - supports-color
     dev: false
 
   /@babel/highlight@7.22.13:
@@ -305,7 +305,7 @@ packages:
       debug: 4.3.4
       globals: 11.12.0
     transitivePeerDependencies:
-      - supports-color
+    - supports-color
     dev: false
 
   /@babel/types@7.22.11:
@@ -726,7 +726,7 @@ packages:
       minimatch: 3.1.2
       strip-json-comments: 3.1.1
     transitivePeerDependencies:
-      - supports-color
+    - supports-color
 
   /@eslint/js@8.48.0:
     resolution: {integrity: sha512-ZSjtmelB7IJfWD2Fvb7+Z+ChTIKWq6kjda95fLcQKNS5aheVHn4IkfgRQE3sIIzTcSLwLcLZUD9UBt+V7+h+Pw==}
@@ -740,7 +740,7 @@ packages:
       debug: 4.3.4
       minimatch: 3.1.2
     transitivePeerDependencies:
-      - supports-color
+    - supports-color
 
   /@humanwhocodes/module-importer@1.0.1:
     resolution: {integrity: sha512-bxveV4V8v5Yb4ncFTT3rPSgZBOpCkjfK0y4oVVVJwIuDVBRMDXrPyXRL988i5ap9m9bnyEEjWfm5WkBmtffLfA==}
@@ -766,7 +766,7 @@ packages:
       prettier: 3.0.3
       semver: 7.5.4
     transitivePeerDependencies:
-      - supports-color
+    - supports-color
     dev: false
 
   /@jridgewell/gen-mapping@0.3.3:
@@ -931,7 +931,7 @@ packages:
       ts-api-utils: 1.0.2(typescript@5.2.2)
       typescript: 5.2.2
     transitivePeerDependencies:
-      - supports-color
+    - supports-color
     dev: false
 
   /@typescript-eslint/parser@6.5.0(eslint@8.48.0)(typescript@5.2.2):
@@ -952,7 +952,7 @@ packages:
       eslint: 8.48.0
       typescript: 5.2.2
     transitivePeerDependencies:
-      - supports-color
+    - supports-color
     dev: false
 
   /@typescript-eslint/scope-manager@6.5.0:
@@ -980,7 +980,7 @@ packages:
       ts-api-utils: 1.0.2(typescript@5.2.2)
       typescript: 5.2.2
     transitivePeerDependencies:
-      - supports-color
+    - supports-color
     dev: false
 
   /@typescript-eslint/types@6.5.0:
@@ -1006,7 +1006,7 @@ packages:
       ts-api-utils: 1.0.2(typescript@5.2.2)
       typescript: 5.2.2
     transitivePeerDependencies:
-      - supports-color
+    - supports-color
     dev: false
 
   /@typescript-eslint/utils@6.5.0(eslint@8.48.0)(typescript@5.2.2):
@@ -1024,8 +1024,8 @@ packages:
       eslint: 8.48.0
       semver: 7.5.4
     transitivePeerDependencies:
-      - supports-color
-      - typescript
+    - supports-color
+    - typescript
     dev: false
 
   /@typescript-eslint/visitor-keys@6.5.0:
@@ -1673,7 +1673,7 @@ packages:
       is-core-module: 2.13.0
       resolve: 1.22.4
     transitivePeerDependencies:
-      - supports-color
+    - supports-color
     dev: false
 
   /eslint-module-utils@2.8.0(@typescript-eslint/parser@6.5.0)(eslint-import-resolver-node@0.3.9)(eslint@8.48.0):
@@ -1702,7 +1702,7 @@ packages:
       eslint: 8.48.0
       eslint-import-resolver-node: 0.3.9
     transitivePeerDependencies:
-      - supports-color
+    - supports-color
     dev: false
 
   /eslint-plugin-import@2.28.1(@typescript-eslint/parser@6.5.0)(eslint@8.48.0):
@@ -1735,9 +1735,9 @@ packages:
       semver: 6.3.1
       tsconfig-paths: 3.14.2
     transitivePeerDependencies:
-      - eslint-import-resolver-typescript
-      - eslint-import-resolver-webpack
-      - supports-color
+    - eslint-import-resolver-typescript
+    - eslint-import-resolver-webpack
+    - supports-color
     dev: false
 
   /eslint-plugin-react-hooks@4.6.0(eslint@8.48.0):
@@ -1837,7 +1837,7 @@ packages:
       strip-ansi: 6.0.1
       text-table: 0.2.0
     transitivePeerDependencies:
-      - supports-color
+    - supports-color
 
   /espree@9.6.1:
     resolution: {integrity: sha512-oruZaFkjorTpF32kDSI5/75ViwGeZginGGy2NoOSg3Q9bnwlnmDm4HLnkl0RE3n+njDXR037aY1+x58Z/zFdwQ==}
@@ -3506,8 +3506,8 @@ packages:
       tree-kill: 1.2.2
       typescript: 5.2.2
     transitivePeerDependencies:
-      - supports-color
-      - ts-node
+    - supports-color
+    - ts-node
     dev: true
 
   /tty-table@4.2.1:
