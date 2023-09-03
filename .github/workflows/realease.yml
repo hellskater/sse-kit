@@ -42,7 +42,7 @@ jobs:
         uses: changesets/action@v1.4.1
         with:
           # Builds the package and executes `changeset publish`
-          publish: pnpm release --no-git-checks
+          publish: pnpm release
           # Alias to `changeset version` script in package.json
           version: pnpm version-packages
           commit: 'chore: update package versions'
@@ -54,30 +54,6 @@ jobs:
       - name: Send a Discord notification if a publish happens
         if: steps.changesets.outputs.published == 'true'
         run: |
-            curl -X POST -H "Content-Type: application/json" -d '{
-              "username": "GitHub Actions Bot",
-              "avatar_url": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
-              "embeds": [
-                {
-                  "title": "New Release Published!",
-                  "description": "A new version of the repository has been published.",
-                  "url": "https://github.com/${{ github.repository }}/releases",
-                  "color": 16761035,
-                  "fields": [
-                    {
-                      "name": "Repository",
-                      "value": "${{ github.repository }}",
-                      "inline": true
-                    },
-                    {
-                      "name": "Ref",
-                      "value": "${{ github.ref }}",
-                      "inline": true
-                    }
-                  ],
-                  "footer": {
-                    "text": "GitHub Actions"
-                  }
-                }
-              ]
-            }' ${{ secrets.DISCORD_WEBHOOK_URL }}
+          curl -X POST -H 'Content-type: application/json' \
+          --data '{"content":"A new version of the package has been published!"}' \
+          ${{ secrets.DISCORD_WEBHOOK_URL }}
