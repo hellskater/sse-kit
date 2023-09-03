@@ -21,7 +21,7 @@ importers:
         specifier: ^0.20.0
         version: 0.20.0
       '@sse-toolkit/eslint-config':
-        specifier: workspace:*
+        specifier: 0.0.1
         version: link:packages/config/eslint
       '@types/node':
         specifier: 18.16.0
@@ -87,13 +87,13 @@ importers:
   packages/react:
     devDependencies:
       '@sse-toolkit/eslint-config':
-        specifier: workspace:*
+        specifier: 0.0.1
         version: link:../config/eslint
       '@sse-toolkit/tsconfig':
-        specifier: workspace:*
+        specifier: 0.0.1
         version: link:../config/tsconfig
       '@sse-toolkit/tsup-config':
-        specifier: workspace:*
+        specifier: 0.0.1
         version: link:../config/tsup
       '@types/node':
         specifier: 18.16.0
