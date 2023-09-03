@@ -42,7 +42,7 @@ jobs:
         uses: changesets/action@v1.4.1
         with:
           # Builds the package and executes `changeset publish`
-          publish: pnpm release
+          publish: pnpm release --no-git-checks
           # Alias to `changeset version` script in package.json
           version: pnpm version-packages
           commit: 'chore: update package versions'
